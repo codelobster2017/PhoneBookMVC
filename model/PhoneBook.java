@@ -9,10 +9,12 @@ public class PhoneBook {
     public PhoneBook() {
         contactsList = new ArrayList<>();
     }
+
     public Boolean addContact(Contact contact) {
-       return contactsList.add(contact);
+        return contactsList.add(contact);
     }
-    public List<Contact> getAll(){
+
+    public List<Contact> getAll() {
         return contactsList;
     }
 

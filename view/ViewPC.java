@@ -24,6 +24,12 @@ public class ViewPC implements View {
             case 3:
                 System.out.println("Все контакты: ");
                 break;
+            case 4:
+                System.out.println("Введите: ");
+                System.out.println("1 - Сохранить в формате XML");
+                System.out.println("2 - Сохранить в формате JSON");
+                System.out.println("(ENTER) Затем введите путь");
+                break;
             default:
                 System.out.println("Введите цифру от 0 до 3");
         }
@@ -35,7 +41,7 @@ public class ViewPC implements View {
         if (result) {
             System.out.println(comment + " успешно " + operation);
         } else {
-            System.out.println(" не удалось ");
+            System.out.println("Не удалось выполнить команду");
         }
     }
 
@@ -45,6 +51,7 @@ public class ViewPC implements View {
                 1 - Добавить контакт
                 2 - найти контакты
                 3 - показать все
+                4 - сохранить
                 0 - выход""");
     }
 }

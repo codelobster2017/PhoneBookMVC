@@ -1,9 +1,6 @@
 package controller;
 
-import model.Contact;
-import model.PhoneBook;
-import model.Search;
-import model.SearchByKeyword;
+import model.*;
 import view.ViewPC;
 
 import java.util.Scanner;
@@ -15,6 +12,8 @@ public class ControllerPC implements Controller {
     Search search;
     Scanner scannerInt;
     Scanner scannerString;
+    SaveAs saveAs;
+
     public ControllerPC() {
         this.phoneBook = new PhoneBook();
         this.view = new ViewPC();
@@ -26,16 +25,16 @@ public class ControllerPC implements Controller {
     @Override
     public void menu() {
         view.printMenu();
-        inputNumber();
+        input();
     }
 
     @Override
-    public void inputNumber() {
+    public void input() {
         boolean inputStart = true;
         int idAction;
 
         while (inputStart) {
-            idAction = scannerInt.nextInt();
+            idAction = number();
             view.printAction(idAction);
             switch (idAction) {
                 case 0:
@@ -51,13 +50,27 @@ public class ControllerPC implements Controller {
                 case 3:
                     view.printAll(phoneBook.getAll());
                     break;
+                case 4:
+                    if (number() == 1) {
+                        saveAs = new XML();
+                    } else {
+                        saveAs = new XML();
+                    }
+                    view.successFul(saveAs.saveAs(data(), phoneBook), "сохранен", phoneBook.getClass().getName() + saveAs.getClass().getName());
+                    break;
             }
         }
     }
 
+
     @Override
     public String data() {
         return scannerString.nextLine();
+    }
+
+    @Override
+    public int number() {
+        return scannerInt.nextInt();
     }
 
 

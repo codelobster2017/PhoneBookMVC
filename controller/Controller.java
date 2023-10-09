@@ -2,6 +2,10 @@ package controller;
 
 public interface Controller {
     void menu();
-    void inputNumber();
+
+    void input();
+
     String data();
+
+    int number();
 }
