@@ -2,6 +2,9 @@ package model;
 
 import java.util.Objects;
 
+/**
+ * Принцип единственной ответственности (SRP) - работа только с контактом
+ */
 public class Contact {
     private String name;
     private String number;

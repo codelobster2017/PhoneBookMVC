@@ -4,6 +4,10 @@ import model.Contact;
 
 import java.util.List;
 
+/**
+ * Принцип единственной ответственности (SRP)
+ *
+ */
 public class ViewPC implements View {
     @Override
     public void printAll(List<Contact> list) {
